@@ -1,4 +1,3 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import TerminalLayout from './components/layout/TerminalLayout'
 import HomePage from './pages/HomePage'

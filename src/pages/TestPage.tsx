@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Play, Pause, RotateCcw, Download, BarChart3 } from 'lucide-react'
+import { Play, RotateCcw, BarChart3 } from 'lucide-react'
 import { testCategories, testQuestions } from '../data/knowledgeBase'
-import { TestCategory, TestQuestion } from '../types'
 
 const TestPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('')

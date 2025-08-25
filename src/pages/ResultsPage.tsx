@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Download, Share2, BarChart3, TrendingUp } from 'lucide-react'
+import { Download, Share2, TrendingUp } from 'lucide-react'
 
 const ResultsPage: React.FC = () => {
   // Mock data - in real app this would come from state/props
