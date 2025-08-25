@@ -4,6 +4,12 @@
 
 TuringTest for LLMs 是一个利用原始设备模拟图灵测试的智能检测工具，通过与大型语言模型（LLM）的互动，评估模型是否展现出类似人类的智能行为。该项目旨在为AI研究人员、开发者和学术机构提供一个可信的智能检测平台。
 
+## 🔗 相关链接
+
+- **Twitter**: [@turing4llm](https://x.com/turing4llm)
+- **GitHub**: [Lucas4MouthGauard/turing](https://github.com/Lucas4MouthGauard/turing)
+- **Token**: $Turing4LLM (Coming Soon)
+
 ## 核心功能
 
 ### 1. 设备模拟与用户交互
@@ -79,3 +85,9 @@ turing/
 ## 许可证
 
 MIT License
+
+## 社区
+
+- 关注我们的 [Twitter](https://x.com/turing4llm) 获取最新更新
+- 在 [GitHub](https://github.com/Lucas4MouthGauard/turing) 上参与开发
+- $Turing4LLM 代币即将推出，敬请期待！

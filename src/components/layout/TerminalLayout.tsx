@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { Terminal, TestTube, BarChart3, Settings, Info } from 'lucide-react'
+import { Terminal, TestTube, BarChart3, Settings, Info, Twitter } from 'lucide-react'
 
 interface TerminalLayoutProps {
   children: React.ReactNode
@@ -18,33 +17,97 @@ const TerminalLayout: React.FC<TerminalLayoutProps> = ({ children }) => {
     { path: '/about', label: 'About', icon: Info }
   ]
 
+  const handleTwitterClick = () => {
+    window.open('https://x.com/turing4llm', '_blank')
+  }
+
+  const handleTuringTokenClick = () => {
+    // 暂时不可跳转，显示提示信息
+    alert('$Turing4LLM token coming soon!')
+  }
+
   return (
-    <div className="min-h-screen terminal-window crt-effect">
-      {/* CRT Scanline Effect */}
-      <div className="scanline"></div>
-      
+    <div className="terminal-window">
       {/* Header */}
-      <header className="border-b border-terminal-text p-4">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-between"
-        >
-          <div className="flex items-center space-x-3">
-            <Terminal className="w-8 h-8 text-terminal-text" />
-            <h1 className="text-2xl font-bold text-terminal-text text-glow">
+      <header style={{ borderBottom: '1px solid #00ff00', padding: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <Terminal style={{ width: '32px', height: '32px', color: '#00ff00' }} />
+            <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: '#00ff00' }}>
               TuringTest for LLMs
             </h1>
           </div>
-          <div className="text-terminal-text-dim text-sm">
-            AI Intelligence Evaluation Platform
+          
+          {/* Social Buttons */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div style={{ color: '#00cc00', fontSize: '14px' }}>
+              AI Intelligence Evaluation Platform
+            </div>
+            
+            {/* Twitter Button */}
+            <button
+              onClick={handleTwitterClick}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                backgroundColor: 'transparent',
+                border: '1px solid #00ff00',
+                color: '#00ff00',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#00ff00'
+                e.currentTarget.style.color = '#0a0a0a'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = '#00ff00'
+              }}
+            >
+              <Twitter style={{ width: '14px', height: '14px' }} />
+              <span>Twitter</span>
+            </button>
+            
+            {/* $Turing4LLM Token Button */}
+            <button
+              onClick={handleTuringTokenClick}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                backgroundColor: 'transparent',
+                border: '1px solid #00cc00',
+                color: '#00cc00',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#00cc00'
+                e.currentTarget.style.color = '#0a0a0a'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = '#00cc00'
+              }}
+            >
+              <span style={{ fontWeight: 'bold' }}>$</span>
+              <span>Turing4LLM</span>
+            </button>
           </div>
-        </motion.div>
+        </div>
       </header>
 
       {/* Navigation */}
-      <nav className="border-b border-terminal-text-dim p-2">
-        <div className="flex space-x-1">
+      <nav style={{ borderBottom: '1px solid #00cc00', padding: '8px' }}>
+        <div style={{ display: 'flex', gap: '4px' }}>
           {navItems.map((item) => {
             const Icon = item.icon
             const isActive = location.pathname === item.path
@@ -53,14 +116,21 @@ const TerminalLayout: React.FC<TerminalLayoutProps> = ({ children }) => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center space-x-2 px-3 py-2 rounded transition-all duration-200 ${
-                  isActive
-                    ? 'bg-terminal-text text-terminal-bg border-glow'
-                    : 'text-terminal-text hover:bg-terminal-text hover:text-terminal-bg'
-                }`}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '8px 12px',
+                  borderRadius: '4px',
+                  color: isActive ? '#0a0a0a' : '#00ff00',
+                  backgroundColor: isActive ? '#00ff00' : 'transparent',
+                  textDecoration: 'none'
+                }}
               >
-                <Icon className="w-4 h-4" />
-                <span className="hidden sm:inline">{item.label}</span>
+                <Icon style={{ width: '16px', height: '16px' }} />
+                <span style={{ display: window.innerWidth > 640 ? 'inline' : 'none' }}>
+                  {item.label}
+                </span>
               </Link>
             )
           })}
@@ -68,21 +138,13 @@ const TerminalLayout: React.FC<TerminalLayoutProps> = ({ children }) => {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-1 p-6">
-        <motion.div
-          key={location.pathname}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.3 }}
-        >
-          {children}
-        </motion.div>
+      <main style={{ padding: '24px' }}>
+        {children}
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-terminal-text-dim p-4 text-center text-terminal-text-dim text-sm">
-        <div className="flex items-center justify-center space-x-4">
+      <footer style={{ borderTop: '1px solid #00cc00', padding: '16px', textAlign: 'center', color: '#00cc00', fontSize: '14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
           <span>© 2024 TuringTest for LLMs</span>
           <span>•</span>
           <span>AI Research Platform</span>
