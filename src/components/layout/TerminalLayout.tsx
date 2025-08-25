@@ -18,12 +18,12 @@ const TerminalLayout: React.FC<TerminalLayoutProps> = ({ children }) => {
   ]
 
   const handleTwitterClick = () => {
-    window.open('https://x.com/turing4llm', '_blank')
+    window.open('https://x.com/TuringForLLM', '_blank')
   }
 
   const handleTuringTokenClick = () => {
-    // 跳转到Pump.fun页面
-    window.open('https://pump.fun/coin/G8GS6o1HrjHrrZGpjq4N241wJsi4N65TKTbQd5gYpump', '_blank')
+    // 暂时不可跳转，显示提示信息
+    alert('$TLLM token coming soon!')
   }
 
   return (
@@ -99,7 +99,7 @@ const TerminalLayout: React.FC<TerminalLayoutProps> = ({ children }) => {
               }}
             >
               <span style={{ fontWeight: 'bold' }}>$</span>
-              <span>Turing4LLM</span>
+              <span>TLLM</span>
             </button>
           </div>
         </div>
