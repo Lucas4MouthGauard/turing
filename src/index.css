@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .terminal-window {
+    @apply bg-terminal-bg text-terminal-text font-terminal;
+    background: linear-gradient(
+      180deg,
+      #0a0a0a 0%,
+      #0f0f0f 50%,
+      #0a0a0a 100%
+    );
+  }
+  
+  .crt-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .crt-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 0, 0.03) 2px,
+      rgba(0, 255, 0, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .crt-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at 50% 50%,
+      transparent 0%,
+      rgba(0, 255, 0, 0.02) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .typing-effect {
+    overflow: hidden;
+    border-right: 2px solid #00ff00;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink 1s step-end infinite;
+  }
+  
+  .command-line {
+    @apply bg-transparent text-terminal-text border-none outline-none font-terminal text-lg;
+    caret-color: #00ff00;
+  }
+  
+  .command-line::placeholder {
+    @apply text-terminal-text-dim;
+  }
+  
+  .retro-button {
+    @apply bg-transparent border border-terminal-text text-terminal-text px-4 py-2 font-terminal;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .retro-button:hover {
+    @apply bg-terminal-text text-terminal-bg;
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  .retro-button:active {
+    transform: scale(0.95);
+  }
+  
+  .scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 255, 0, 0.5),
+      transparent
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 5px #00ff00, inset 0 0 5px rgba(0, 255, 0, 0.1);
+  }
+}

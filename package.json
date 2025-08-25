@@ -1,0 +1,67 @@
+{
+  "name": "turing-test-for-llms",
+  "version": "1.0.0",
+  "description": "利用原始设备模拟图灵测试，通过与大型语言模型（LLM）的互动，评估模型是否展现出类似人类的智能行为",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "keywords": [
+    "turing-test",
+    "llm",
+    "ai-evaluation",
+    "artificial-intelligence",
+    "machine-learning",
+    "research-tools"
+  ],
+  "author": "TuringTest Team",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "axios": "^1.4.0",
+    "chart.js": "^4.3.0",
+    "react-chartjs-2": "^5.2.0",
+    "framer-motion": "^10.12.16",
+    "clsx": "^1.2.1",
+    "tailwind-merge": "^1.13.2",
+    "lucide-react": "^0.263.1",
+    "react-hook-form": "^7.44.3",
+    "zod": "^3.21.4",
+    "@hookform/resolvers": "^3.1.0",
+    "date-fns": "^2.30.0",
+    "react-markdown": "^8.0.7",
+    "remark-gfm": "^3.0.1",
+    "rehype-highlight": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vitest": "^0.34.1",
+    "@vitest/ui": "^0.34.1",
+    "@vitest/coverage-v8": "^0.34.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
