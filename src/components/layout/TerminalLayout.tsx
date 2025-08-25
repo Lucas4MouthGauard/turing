@@ -22,8 +22,8 @@ const TerminalLayout: React.FC<TerminalLayoutProps> = ({ children }) => {
   }
 
   const handleTuringTokenClick = () => {
-    // 暂时不可跳转，显示提示信息
-    alert('$TLLM token coming soon!')
+    // 跳转到Pump.fun页面
+    window.open('https://pump.fun/coin/2eyZ2J8K3QwndYyG4wXPp9sRKQg8qhe1feMgqQEApump', '_blank')
   }
 
   return (

@@ -8,7 +8,7 @@ TuringTest for LLMs 是一个利用原始设备模拟图灵测试的智能检测
 
 - **Twitter**: [@TuringForLLM](https://x.com/TuringForLLM)
 - **GitHub**: [Lucas4MouthGauard/turing](https://github.com/Lucas4MouthGauard/turing)
-- **Token**: $TLLM (Coming Soon)
+- **Token**: [$TLLM on Pump.fun](https://pump.fun/coin/2eyZ2J8K3QwndYyG4wXPp9sRKQg8qhe1feMgqQEApump)
 
 ## 核心功能
 
@@ -90,4 +90,4 @@ MIT License
 
 - 关注我们的 [Twitter](https://x.com/TuringForLLM) 获取最新更新
 - 在 [GitHub](https://github.com/Lucas4MouthGauard/turing) 上参与开发
-- $TLLM 代币即将推出，敬请期待！
+- 查看 [$TLLM 代币](https://pump.fun/coin/2eyZ2J8K3QwndYyG4wXPp9sRKQg8qhe1feMgqQEApump) 在 Pump.fun 上的表现
